@@ -1,12 +1,16 @@
+import sys
+import os
 import pytest
 
+LXMLS_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, LXMLS_ROOT)
+
 from numpy import array, array_equal, allclose
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 from lxmls.readers import galton
-import lxmls.classifiers.gaussian_naive_bayes as gnbc
-import lxmls.readers.simple_data_set as sds
-
 
 tolerance = 1e-5
 
